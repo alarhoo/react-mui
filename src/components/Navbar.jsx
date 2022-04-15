@@ -36,6 +36,7 @@ const UserBox = styled(Box)(({ theme }) => ({
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const rn = Math.floor(Math.random() * 10);
   return (
     <AppBar position='sticky'>
       <StyledToolbar>
@@ -50,7 +51,7 @@ const Navbar = () => {
             },
           }}
         >
-          ಅಲರ್
+          React MUI
         </Typography>
         <FilterVintage
           sx={{
@@ -64,16 +65,16 @@ const Navbar = () => {
           <InputBase placeholder='Search...' />
         </Search>
         <Icons>
-          <Badge badgeContent={4} color='error'>
+          <Badge badgeContent={rn} color='error'>
             <Mail />
           </Badge>
-          <Badge badgeContent={4} color='error'>
+          <Badge badgeContent={rn + 3} color='error'>
             <Notifications />
           </Badge>
-          <Avatar src='https://randomuser.me/api/portraits/women/0.jpg' onClick={(e) => setOpen(true)} />
+          <Avatar src={`https://randomuser.me/api/portraits/women/${rn}.jpg`} onClick={(e) => setOpen(true)} />
         </Icons>
         <UserBox onClick={(e) => setOpen(true)}>
-          <Avatar src='https://randomuser.me/api/portraits/women/0.jpg' />
+          <Avatar src={`https://randomuser.me/api/portraits/women/${rn}.jpg`} />
           <Typography variant='span'>Lisa</Typography>
         </UserBox>
       </StyledToolbar>
